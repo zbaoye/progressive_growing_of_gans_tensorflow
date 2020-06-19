@@ -36,10 +36,11 @@ class Channel(object):
                     'Rx_data': tf.FixedLenFeature(shape=(8192,1), dtype=tf.float32)}
             parsed_example = tf.parse_single_example(example_proto, dics)
             return parsed_example
-        dataset = dataset.map(parse_function)
         dataset = dataset.shuffle(buffer_size=20000)
+        dataset = dataset.map(parse_function, num_parallel_calls=8)
         dataset = dataset.repeat(self.epoch+1)
         dataset = dataset.batch(self.batch_size)
+        dataset = dataset.prefetch(buffer_size=self.batch_size*10)
         iterator = dataset.make_one_shot_iterator()
         return iterator
         

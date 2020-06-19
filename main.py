@@ -8,13 +8,13 @@ import os
 
 os.environ['CUDA_VISIBLE_DEVICES']='0'
 flags.DEFINE_string('f', '', 'kernel')
-flags.DEFINE_string("OPER_NAME", "channel_64_16", "the name of experiments")
+flags.DEFINE_string("OPER_NAME", "channel_64_64", "the name of experiments")
 flags.DEFINE_string("data_path" , "/home/zby/datasets/channel/data_5.22/train_5.22.tfrecords", "Path of training data, for example /home/hehe/")
 flags.DEFINE_string("dataset" , 'channel', "Path of training data, for example /home/hehe/")
 flags.DEFINE_integer("data_size", 50000, "dataset size")
 flags.DEFINE_integer("batch_size", 64, "Batch size")
 flags.DEFINE_integer("sample_size", 128, "Size of sample")
-flags.DEFINE_integer("epoch", 3, "Size of sample")
+flags.DEFINE_integer("epoch", 30, "Size of sample")
 flags.DEFINE_float("scale_factor", 2.5, "Size of sample")
 flags.DEFINE_integer("max_iters", 800, "Maxmization of training number")
 flags.DEFINE_float("learn_rate", 0.001, "Learning rate for G and D networks")

@@ -1,5 +1,7 @@
 # output file
 output/
+csgm/estimated/
+csgm/models/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

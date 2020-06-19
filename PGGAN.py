@@ -197,7 +197,7 @@ class PGGAN(object):
                     # the alpha of fake_in process
                     sess.run(alpha_tra_assign, feed_dict={step_pl: step})
 
-                    if step % 100 == 0:
+                    if step % 500 == 0:
                         D_loss, G_loss, D_origin_loss, alpha_tra = sess.run([self.D_loss, self.G_loss, self.D_origin_loss,self.alpha_tra], feed_dict={self.images: realbatch_array, self.z: sample_z})
                         print("PG %d, epoch %d,step %d: D loss=%.7f G loss=%.7f, D_or loss=%.7f, opt_alpha_tra=%.7f" % (self.pg, epoch_, step, D_loss, G_loss, D_origin_loss, alpha_tra))
 
