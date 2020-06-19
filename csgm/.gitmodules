@@ -1,0 +1,3 @@
+[submodule "mnist_vae"]
+	path = mnist_vae
+	url = https://github.com/AshishBora/mnist-vae
